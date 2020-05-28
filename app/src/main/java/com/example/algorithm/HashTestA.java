@@ -5,17 +5,16 @@ import java.util.Arrays;
 
 public class HashTestA {
     String Solution(String[] participant, String[] completion){
-        ArrayList<String> result =  new ArrayList<>(Arrays.asList(participant));
-        ArrayList<String> arrayListA = new ArrayList<>(Arrays.asList(participant));
-        ArrayList<String> arrayListB = new ArrayList<>(Arrays.asList(completion));
 
-        for (int i=0; i < participant.length - 1; i++ ){
-            for (int l = 0; l < completion.length ; l++){
-                if (arrayListA.get(i).equals(arrayListB.get(l))){
-                    result.remove(arrayListA.get(i));
-                }
+        Arrays.sort(participant);
+        Arrays.sort(completion);
+        int i;
+        for (i=0; i<completion.length; i++){
+            if (!participant[i].equals(completion[i])){
+                return participant[i];
             }
         }
-        return result.get(0);
+
+        return participant[i];
     }
 }
