@@ -1,22 +1,17 @@
 package com.example.algorithm
 
 class HashTestAKotlin {
+    var result: String = ""
     fun solution(a : Array<String>, b: Array<String>) : String{
-        val result = mutableListOf<String>()
-        a.forEach {
-            result.add(it)
-        }
-
-        println(result.size)
-        for (i in a.indices){
-            for (l in b.indices){
-                if (a[i] == b[l]){
-                    result.remove(a[i])
-                    break
-                }
+        val temp = a.toList()
+        b.forEach {
+            if (temp.contains(it)){
+                println("$it")
+            }else{
+                println("$it")
+                result = it
             }
         }
-        println(result.size)
-        return result.elementAt(0)
+        return result
     }
 }
