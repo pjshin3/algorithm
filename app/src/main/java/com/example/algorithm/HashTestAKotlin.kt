@@ -1,17 +1,15 @@
 package com.example.algorithm
 
 class HashTestAKotlin {
-    var result: String = ""
+
     fun solution(a : Array<String>, b: Array<String>) : String{
-        val temp = a.toList()
+        val temp = a.toMutableList()
         b.forEach {
             if (temp.contains(it)){
-                println("$it")
-            }else{
-                println("$it")
-                result = it
+                temp.remove(it)
             }
         }
-        return result
+
+        return temp.first()
     }
 }
