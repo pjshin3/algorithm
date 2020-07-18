@@ -1,6 +1,6 @@
 package com.example.algorithm
 
-class HashTestAKotlin {
+class HashTestA {
 
     fun solution(a : Array<String>, b: Array<String>) : String{
         val temp = a.toMutableList()

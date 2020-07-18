@@ -5,7 +5,7 @@ import junit.framework.Assert.assertEquals
 
 class HashTestATestClass {
 
-    private val testclass = HashTestAKotlin()
+    private val testclass = HashTestA()
     private val testCaseA = arrayOf("leo","kiki","eden")
     private val testCaseB = arrayOf("marina", "josipa", "nikola", "vinko","filipa")
     private val testCaseC = arrayOf("mislav", "stanko", "mislav", "ana")
