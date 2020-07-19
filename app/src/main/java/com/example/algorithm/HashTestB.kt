@@ -8,16 +8,17 @@ class HashTestB {
         val temp = phonebook.toList()
         val temp2 = phonebook.toList()
 
-        temp.forEach {string ->
-            temp2.forEach {
-                result = it.any { it.equals(string) }
 
-                if (result){
-                    return result
+        temp.forEach {firstString ->
+            temp2.forEach { second ->
+                firstString.forEachIndexed{index, c ->
+                    if (second.get(index).equals(c)){
+                        println("$c, ${firstString.get(index)}")
+                    }
                 }
-
             }
         }
+
 
         return result
     }

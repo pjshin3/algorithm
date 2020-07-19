@@ -1,6 +1,5 @@
 package com.example.algorithm
 
-import junit.framework.Assert
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
