@@ -16,19 +16,20 @@ class HashTestB {
     }
 
 
-    private fun compare(a : String, b : String): Int{
-        var count = 0
+    private fun compare(a : String, b : String){
         println("$a , $b")
         a.forEachIndexed { index, c ->
 
             if (index >= b.length || index >= a.length) return@forEachIndexed
 
             if (c == b[index]){
-                count ++
+                println("$c , ${b[index]}")
                 result = false
+            }else{
+                return
             }
         }
 
-        return count
+        return
     }
 }
