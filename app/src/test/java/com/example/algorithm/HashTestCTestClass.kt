@@ -5,7 +5,7 @@ import org.junit.Test
 
 class HashTestCTestClass {
 
-//    private val testcaseA = Array<String>(3 )
+    private val testcaseA = arrayOf(arrayOf("yellow_hat","headgear") , arrayOf(""))
     lateinit var testclass : HashTestC
     @Before
     fun setUp(){
