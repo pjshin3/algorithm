@@ -15,6 +15,6 @@ class HashTestCTestClass {
 
     @Test
     fun `위장`(){
-        testclass.solution(testcaseB)
+        testclass.solution(testcaseA)
     }
 }
