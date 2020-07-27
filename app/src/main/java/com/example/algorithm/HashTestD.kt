@@ -7,19 +7,14 @@ class HashTestD {
     fun solution(genres: Array<String>, plays: IntArray): IntArray{
         var result = intArrayOf()
 
-        var map = plays.toList().zip(genres.toList()).toMap()
+        var map = plays.toList().zip(genres.toMutableList()).toMap()
         val templist = plays.copyOf()
+        templist.sort()
 
-        map = map.toMutableMap()
-
-        templist.forEachIndexed { index, i ->
-           map[i]!!.plus("adfadsfasfsaf")
+        templist.forEach {
+            println(plays.indexOf(it))
+            println(map[it])
         }
-
-        map.forEach{
-            println(it)
-        }
-
         return result
     }
 }
