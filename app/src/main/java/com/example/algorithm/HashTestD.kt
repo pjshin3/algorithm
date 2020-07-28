@@ -1,20 +1,31 @@
 package com.example.algorithm
 
-import android.util.Log
-
 class HashTestD {
 
     fun solution(genres: Array<String>, plays: IntArray): IntArray{
-        var result = intArrayOf()
 
-        var map = plays.toList().zip(genres.toMutableList()).toMap()
+        var resulttest = arrayListOf<Int>()
+        var map = plays.toList().zip(genres.toList()).toMap()
         val templist = plays.copyOf()
-        templist.sort()
-
-        templist.forEach {
-            println(plays.indexOf(it))
-            println(map[it])
+        val set = genres.copyOf()
+        set.toSet().forEach{
+            getindex(plays,templist,map,it).forEach {
+                 resulttest.add(it)
+            }
         }
+
+        return resulttest.toIntArray()
+    }
+
+    private fun getindex(list: IntArray, sortList: IntArray ,map :Map<Int,String>,string: String) : ArrayList<Int>{
+        var result = arrayListOf<Int>()
+
+        sortList.forEach {
+            if (map[it] == string){
+                result.add(list.indexOf(it))
+            }
+        }
+
         return result
     }
 }
