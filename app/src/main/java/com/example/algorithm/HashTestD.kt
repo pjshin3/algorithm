@@ -3,27 +3,23 @@ package com.example.algorithm
 class HashTestD {
 
     fun solution(genres: Array<String>, plays: IntArray): IntArray{
+        val result = intArrayOf()
 
-        var resulttest = arrayListOf<Int>()
-        var map = plays.toList().zip(genres.toList()).toMap()
-        val templist = plays.copyOf()
-        val set = genres.copyOf()
-        set.toSet().forEach{
-            getindex(plays,templist,map,it).forEach {
-                 resulttest.add(it)
-            }
+        val resultMap = mutableMapOf<String,ArrayList<Int>>()
+
+        val comparaMap = (0..plays.last()).zip(plays.toList()).toMap()
+        val comparaMapString = (0..genres.size).zip(genres.toList()).toMap()
+
+        genres.distinct().forEach {
+            resultMap.put(it, arrayListOf())
         }
 
-        return resulttest.toIntArray()
-    }
+        genres.forEachIndexed { index, s ->
+            resultMap[s]?.add(comparaMap.keys.indexOf(index))
+        }
 
-    private fun getindex(list: IntArray, sortList: IntArray ,map :Map<Int,String>,string: String) : ArrayList<Int>{
-        var result = arrayListOf<Int>()
-
-        sortList.forEach {
-            if (map[it] == string){
-                result.add(list.indexOf(it))
-            }
+        resultMap.forEach {
+            println(it)
         }
 
         return result
